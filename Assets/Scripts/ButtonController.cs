@@ -3,6 +3,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject water;
+    [SerializeField] private Sprite buttonOn;
 
     void Start()
     {
@@ -12,5 +13,7 @@ public class ButtonController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         water.SetActive(true);
+        gameObject.GetComponent<SpriteRenderer>().sprite = buttonOn;
+
     }
 }

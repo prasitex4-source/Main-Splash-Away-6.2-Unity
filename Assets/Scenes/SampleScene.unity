@@ -150,8 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7039030754261a645bf65e6d1ee5933d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  palanca: {fileID: 1769225181}
-  switched: {fileID: 0}
+  puerta: {fileID: 1769225181}
+  palancaAbierta: {fileID: 7182974, guid: 7706c76605976f048a409a440faef90b, type: 3}
+  puertaAbierta: {fileID: -4258255429078663980, guid: 7706c76605976f048a409a440faef90b, type: 3}
 --- !u!61 &110394483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1254,6 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   water: {fileID: 2146144603}
+  buttonOn: {fileID: 838616838, guid: 7706c76605976f048a409a440faef90b, type: 3}
 --- !u!212 &844583596
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1714,6 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82eef0931bac7ad46bd28d68ca591231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  puertaAbierta: {fileID: -4258255429078663980, guid: 7706c76605976f048a409a440faef90b, type: 3}
 --- !u!70 &1769225183
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
