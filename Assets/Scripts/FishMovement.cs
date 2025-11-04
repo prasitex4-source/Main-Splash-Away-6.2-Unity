@@ -5,6 +5,7 @@ public class FishMovement : MonoBehaviour
 {
     [Header("Movimiento dentro del agua")]
     [SerializeField] private float swimSpeed = 4f;
+    [SerializeField] private float swimMaxSpeed = 8f;
     [SerializeField] private string waterTag;
 
     [Header("Saltos fuera del agua")]
@@ -54,8 +55,17 @@ public class FishMovement : MonoBehaviour
         {
             // Movimiento libre dentro del agua
             rb.gravityScale = 0.1f;
-            rb.linearVelocity = input * swimSpeed;
             jumpCount = 0; // Reinicia saltos al volver al agua
+
+            if(Input.GetKey(KeyCode.Space))
+            {
+                rb.linearVelocity = input * swimMaxSpeed;
+            }
+
+            else
+            {
+                rb.linearVelocity = input * swimSpeed;
+            }
         }
         else
         {

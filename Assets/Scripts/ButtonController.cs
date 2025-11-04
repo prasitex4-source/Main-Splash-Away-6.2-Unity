@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject water;
+
+    void Start()
+    {
+        water.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        door.GetComponent<CapsuleCollider2D>().enabled = true;
-        gameObject.SetActive(false);
+        water.SetActive(true);
     }
 }
