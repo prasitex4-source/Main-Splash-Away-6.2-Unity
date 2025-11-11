@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class FishMovement : MonoBehaviour
 {
@@ -23,11 +24,16 @@ public class FishMovement : MonoBehaviour
     [SerializeField] private Vector2 groundCheckSize = new Vector2(0.4f, 0.05f);
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("In Bucket")]
+    [SerializeField] private GameObject positionFish;
+    [HideInInspector] public GameObject bucket;
+
     private Rigidbody2D rb;
     private Vector2 input = Vector2.zero;
     private bool isSwimming = false;
     private bool wasGroundedLastFrame = false;
     private int jumpCount = 0;
+    private bool inBucket = false;
 
     void Start()
     {
@@ -57,7 +63,7 @@ public class FishMovement : MonoBehaviour
             rb.gravityScale = 0.1f;
             jumpCount = 0; // Reinicia saltos al volver al agua
 
-            if(Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 rb.linearVelocity = input * swimMaxSpeed;
             }
@@ -67,8 +73,43 @@ public class FishMovement : MonoBehaviour
                 rb.linearVelocity = input * swimSpeed;
             }
         }
+
+        else if (inBucket)
+        {
+            isSwimming = false;
+            transform.position = positionFish.transform.position;
+            transform.rotation = Quaternion.Euler(0f, 0f, -35.0f);
+            rb.gravityScale = 0f;
+            rb.linearVelocity = Vector2.zero;
+            jumpCount = 0;
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                inBucket = false;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                bucket.GetComponent<BucketController>().ReactivateCollider();
+            }
+
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                inBucket = false;
+                bucket.GetComponent<BucketController>().PushRight();
+                rb.AddForce(Vector2.right * jumpForce, ForceMode2D.Impulse);
+
+            }
+
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                inBucket = false;
+                bucket.GetComponent<BucketController>().PushLeft();
+                rb.AddForce(Vector2.left * jumpForce, ForceMode2D.Impulse);
+            }
+
+        }
+
         else
         {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             rb.gravityScale = 1f;
             bool grounded = IsGrounded();
 
@@ -116,6 +157,21 @@ public class FishMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer) != null;
+    }
+
+    public bool GetBucket()
+    {
+        return inBucket;
+    }
+
+    public void SetBucket(bool bucket)
+    {
+        inBucket = bucket;
+    }
+
+    public void SetBucket(GameObject bck)
+    {
+        bucket = bck;
     }
 
     private void OnDrawGizmos()
