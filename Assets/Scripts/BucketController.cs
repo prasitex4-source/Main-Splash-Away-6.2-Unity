@@ -8,6 +8,8 @@ public class BucketController : MonoBehaviour
     [SerializeField] private GameObject pez;
     [SerializeField] private GameObject positionFish;
     [SerializeField] private int timer;
+    [SerializeField] private GameObject water;
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +30,7 @@ public class BucketController : MonoBehaviour
     public void PushRight()
     {
         transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
+        water.SetActive(true);
     }
 
     public void PushLeft()
@@ -36,4 +39,8 @@ public class BucketController : MonoBehaviour
     }
 
 
+    void Start()
+    {
+        water.SetActive(false);
+    }
 }
