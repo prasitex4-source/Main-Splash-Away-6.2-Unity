@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class FishMovement : MonoBehaviour
@@ -27,9 +29,14 @@ public class FishMovement : MonoBehaviour
     [Header("In Bucket")]
     private GameObject positionFish;
     [HideInInspector] public GameObject bucket;
+    [SerializeField] private int timer;
 
     [Header("Rotation")]
     [SerializeField] private Transform playerSprite;
+    [SerializeField] private float rotateThresholdVel = 0.0f;
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem splashParticle;
 
     private Rigidbody2D rb;
     private Vector2 input = Vector2.zero;
@@ -38,10 +45,14 @@ public class FishMovement : MonoBehaviour
     private int jumpCount = 0;
     private bool inBucket = false;
 
+    private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         // Asegúrate de desmarcar Freeze Rotation en Z en el Rigidbody2D
+        splashParticle.gameObject.SetActive(false);
+        animator = GetComponent<Animator>();
     }
 
     // Entrada del nuevo Input System
@@ -58,11 +69,14 @@ public class FishMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {      
+    void Update()
+    {
+        animator.SetBool("isSwimming", isSwimming);
+        animator.SetBool("grounded", grounded);
+
+        RotatePlayer();
         if (isSwimming)
         {
-            RotatePlayer();
             // Movimiento libre dentro del agua
             rb.gravityScale = 0.1f;
             jumpCount = 0; // Reinicia saltos al volver al agua
@@ -82,34 +96,39 @@ public class FishMovement : MonoBehaviour
         {
             isSwimming = false;
             transform.position = positionFish.transform.position;
-            transform.rotation = Quaternion.Euler(0f, 0f, -35.0f);
+            playerSprite.localRotation = Quaternion.Euler(0f, 0f, -35.0f);
             rb.gravityScale = 0f;
             rb.linearVelocity = Vector2.zero;
             jumpCount = 0;
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 inBucket = false;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 bucket.GetComponent<BucketController>().ReactivateCollider();
+                playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             }
 
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 inBucket = false;
                 bucket.GetComponent<BucketController>().PushRight();
                 rb.AddForce(Vector2.right * jumpForce, ForceMode2D.Impulse);
+                playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
 
             }
 
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 inBucket = false;
                 bucket.GetComponent<BucketController>().PushLeft();
                 rb.AddForce(Vector2.left * jumpForce, ForceMode2D.Impulse);
+                playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             }
 
         }
+
+
 
         else
         {
@@ -135,6 +154,7 @@ public class FishMovement : MonoBehaviour
                     // Después del último salto, se detiene
                     rb.linearVelocity = Vector2.zero;
                     rb.gravityScale = 1f;
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
 
@@ -146,17 +166,33 @@ public class FishMovement : MonoBehaviour
             }
         }
     }
-
+    private void SplashPartciles()
+    {
+        splashParticle.gameObject.SetActive(false);
+        splashParticle.gameObject.SetActive(true);
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
+
         if (other.CompareTag(waterTag))
             isSwimming = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(waterTag))
+            SplashPartciles();
+
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(waterTag))
+        {
             isSwimming = false;
+            SplashPartciles();
+        }
     }
 
     private bool IsGrounded()
@@ -166,6 +202,11 @@ public class FishMovement : MonoBehaviour
 
     private void RotatePlayer()
     {
+        if (rb.linearVelocity.sqrMagnitude <= rotateThresholdVel)
+        {
+            return;
+        }
+
         Vector2 dir = rb.linearVelocity;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, angle);
