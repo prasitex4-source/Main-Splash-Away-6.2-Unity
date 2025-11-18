@@ -28,6 +28,9 @@ public class FishMovement : MonoBehaviour
     private GameObject positionFish;
     [HideInInspector] public GameObject bucket;
 
+    [Header("Rotation")]
+    [SerializeField] private Transform playerSprite;
+
     private Rigidbody2D rb;
     private Vector2 input = Vector2.zero;
     private bool isSwimming = false;
@@ -56,9 +59,7 @@ public class FishMovement : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-      
-
+    {      
         if (isSwimming)
         {
             RotatePlayer();
@@ -167,7 +168,7 @@ public class FishMovement : MonoBehaviour
     {
         Vector2 dir = rb.linearVelocity;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        rb.MoveRotation(angle);
+        playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, angle);
     }
 
     public bool GetBucket()
