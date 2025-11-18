@@ -9,6 +9,7 @@ public class BucketController : MonoBehaviour
     [SerializeField] private GameObject positionFish;
     [SerializeField] private int timer;
     [SerializeField] private GameObject water;
+    [SerializeField] private GameObject fishPlace;
 
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -17,6 +18,7 @@ public class BucketController : MonoBehaviour
         {
             pez.gameObject.GetComponent<FishMovement>().SetBucket(true);
             pez.gameObject.GetComponent<FishMovement>().SetBucket(gameObject);
+            pez.gameObject.GetComponent<FishMovement>().SetFishPosition(fishPlace);
             GetComponent<Collider2D>().enabled = false;
         }
     }

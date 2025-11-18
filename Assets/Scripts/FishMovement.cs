@@ -25,7 +25,7 @@ public class FishMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     [Header("In Bucket")]
-    [SerializeField] private GameObject positionFish;
+    private GameObject positionFish;
     [HideInInspector] public GameObject bucket;
 
     private Rigidbody2D rb;
@@ -57,8 +57,11 @@ public class FishMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+      
+
         if (isSwimming)
         {
+            RotatePlayer();
             // Movimiento libre dentro del agua
             rb.gravityScale = 0.1f;
             jumpCount = 0; // Reinicia saltos al volver al agua
@@ -109,9 +112,9 @@ public class FishMovement : MonoBehaviour
 
         else
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             rb.gravityScale = 1f;
             bool grounded = IsGrounded();
+
 
             // Detecta contacto con el suelo
             if (grounded && !wasGroundedLastFrame)
@@ -124,6 +127,7 @@ public class FishMovement : MonoBehaviour
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
                     jumpCount++;
+                    RotatePlayer();
                 }
                 else
                 {
@@ -159,10 +163,18 @@ public class FishMovement : MonoBehaviour
         return Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer) != null;
     }
 
+    private void RotatePlayer()
+    {
+        Vector2 dir = rb.linearVelocity;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        rb.MoveRotation(angle);
+    }
+
     public bool GetBucket()
     {
         return inBucket;
     }
+
 
     public void SetBucket(bool bucket)
     {
@@ -172,6 +184,10 @@ public class FishMovement : MonoBehaviour
     public void SetBucket(GameObject bck)
     {
         bucket = bck;
+    }
+    public void SetFishPosition(GameObject fishPos)
+    {
+        positionFish = fishPos;
     }
 
     private void OnDrawGizmos()
