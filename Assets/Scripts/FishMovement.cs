@@ -110,19 +110,29 @@ public class FishMovement : MonoBehaviour
 
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                inBucket = false;
-                bucket.GetComponent<BucketController>().PushRight();
-                rb.AddForce(Vector2.right * jumpForce, ForceMode2D.Impulse);
-                playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                if (bucket.tag == "derecha" || bucket.tag == "izquierda")
+                {
+                    inBucket = false;
+                    bucket.GetComponent<BucketController>().PushRight();
+                    rb.AddForce(Vector2.right * jumpForce, ForceMode2D.Impulse);
+                    playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                }
+
+                else { }
 
             }
 
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                inBucket = false;
-                bucket.GetComponent<BucketController>().PushLeft();
-                rb.AddForce(Vector2.left * jumpForce, ForceMode2D.Impulse);
-                playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                if (bucket.tag == "derecha" || bucket.tag == "izquierda")
+                {
+                    inBucket = false;
+                    bucket.GetComponent<BucketController>().PushLeft();
+                    rb.AddForce(Vector2.left * jumpForce, ForceMode2D.Impulse);
+                    playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                }
+
+                else { }
             }
 
         }
