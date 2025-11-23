@@ -72,7 +72,6 @@ public class FishMovement : MonoBehaviour
     void Update()
     {
         animator.SetBool("isSwimming", isSwimming);
-        animator.SetBool("grounded", grounded);
 
         RotatePlayer();
         if (isSwimming)
