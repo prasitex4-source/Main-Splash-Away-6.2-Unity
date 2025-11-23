@@ -11,6 +11,11 @@ public class BucketController : MonoBehaviour
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject fishPlace;
 
+    [Header("Tipocubo")]
+    [SerializeField] private string cuboTipo;
+
+
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,13 +36,38 @@ public class BucketController : MonoBehaviour
 
     public void PushRight()
     {
-        transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
-        water.SetActive(true);
+        if (cuboTipo == "derecha")
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
+            water.SetActive(true);
+        }
+
+        else if (cuboTipo == "izquierda")
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
+        }
+
+        else
+        { }
+       
     }
 
     public void PushLeft()
     {
-        transform.rotation = Quaternion.Euler(0f, 0f, 90.0f);
+
+        if (cuboTipo == "izquierda")
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 90.0f);
+            water.SetActive(true);
+        }
+
+        else if (cuboTipo == "derecha")
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 90.0f);
+        }
+
+        else
+        { }
     }
 
 
