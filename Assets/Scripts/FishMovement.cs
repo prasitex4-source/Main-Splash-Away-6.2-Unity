@@ -38,6 +38,8 @@ public class FishMovement : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem splashParticle;
 
+    audiomanager audiomanager;
+
     private Rigidbody2D rb;
     private Vector2 input = Vector2.zero;
     private bool isSwimming = false;
@@ -46,6 +48,11 @@ public class FishMovement : MonoBehaviour
     private bool inBucket = false;
 
     private Animator animator;
+
+    private void Awake()
+    {
+        audiomanager = GameObject.FindGameObjectWithTag("audio").GetComponent<audiomanager>();
+    }
 
     void Start()
     {
@@ -150,7 +157,7 @@ public class FishMovement : MonoBehaviour
             {
                 if (jumpCount < maxJumps)
                 {
-
+                    audiomanager.PlaySFX(audiomanager.jump);
                     // Resetea la velocidad vertical antes de aplicar salto
                     rb.linearVelocity = new Vector2(rb.linearVelocityX, 0f);
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -189,18 +196,18 @@ public class FishMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(waterTag))
+        if (collision.CompareTag(waterTag) || inBucket )
             SplashPartciles();
-
-
+            audiomanager.PlaySFX(audiomanager.splash);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(waterTag))
+        if (other.CompareTag(waterTag) || !inBucket )
         {
             isSwimming = false;
             SplashPartciles();
+            audiomanager.PlaySFX(audiomanager.splash);
         }
     }
 
@@ -224,7 +231,7 @@ public class FishMovement : MonoBehaviour
     public bool GetBucket()
     {
         return inBucket;
-    }
+    } 
 
 
     public void SetBucket(bool bucket)
