@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 204111275}
   - component: {fileID: 204111274}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20534,7 +20534,7 @@ GameObject:
   - component: {fileID: 858149063}
   - component: {fileID: 858149062}
   - component: {fileID: 858149061}
-  - component: {fileID: 858149060}
+  - component: {fileID: 858149064}
   m_Layer: 0
   m_Name: Botooon (1)
   m_TagString: Untagged
@@ -20542,20 +20542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &858149060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858149059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea04e27a2d2194948af6fb550351f71f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  activado: {fileID: 204111271}
-  buttonOn: {fileID: 838616838, guid: 7706c76605976f048a409a440faef90b, type: 3}
 --- !u!70 &858149061
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20666,6 +20652,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.553}
+--- !u!114 &858149064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858149059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2129b8f0c5fce49468134a9cdca9d727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  activado1: {fileID: 204111271}
+  activado2: {fileID: 995669320}
+  buttonOn: {fileID: 838616838, guid: 7706c76605976f048a409a440faef90b, type: 3}
 --- !u!1 &868888866
 GameObject:
   m_ObjectHideFlags: 0
