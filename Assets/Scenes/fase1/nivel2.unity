@@ -5819,6 +5819,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2834553396350075142, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.197
+      objectReference: {fileID: 0}
     - target: {fileID: 4839695619241715450, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -5895,6 +5899,10 @@ PrefabInstance:
       propertyPath: splashParticle
       value: 
       objectReference: {fileID: 138786516}
+    - target: {fileID: 7581740108569521597, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
+      propertyPath: groundCheckSize.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8267948480840961913, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

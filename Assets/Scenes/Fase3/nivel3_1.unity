@@ -707,7 +707,7 @@ PrefabInstance:
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: pez
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1451683095}
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: water
       value: 
@@ -993,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 799642340385658931, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
       propertyPath: m_LocalScale.x
@@ -6303,6 +6303,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2834553396350075142, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.204
+      objectReference: {fileID: 0}
     - target: {fileID: 4839695619241715450, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -6379,6 +6383,10 @@ PrefabInstance:
       propertyPath: splashParticle
       value: 
       objectReference: {fileID: 1353737981}
+    - target: {fileID: 7581740108569521597, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
+      propertyPath: groundCheckSize.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8267948480840961913, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
