@@ -111,7 +111,7 @@ public class FishMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 inBucket = false;
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * jumpForce * 1.5f, ForceMode2D.Impulse);
                 bucket.GetComponent<BucketController>().ReactivateCollider();
                 playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             }

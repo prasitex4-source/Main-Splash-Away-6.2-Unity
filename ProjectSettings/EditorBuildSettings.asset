@@ -23,12 +23,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/fase1/nivel4.unity
     guid: f4bf8a95dca4aeb41963d849f96d236d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FASE2/nivel2_1.unity
     guid: 212634ef038377c48890b1c0c09507f7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FASE2/nivel2_2.unity
     guid: 04ba7864a285f934290487916ee8c5b0
+  - enabled: 1
+    path: Assets/Scenes/Fase3/nivel3_1.unity
+    guid: c3fd7b8556241804daaf67097d1e1afb
+  - enabled: 1
+    path: Assets/Scenes/Fase3/nivel3_2.unity
+    guid: 8de7199b6254ee2418e13ff1fc840a0c
+  - enabled: 1
+    path: Assets/Scenes/Fase3/nivel3_3.unity
+    guid: b32ec3f4087a71945baf8f5f95975daa
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
