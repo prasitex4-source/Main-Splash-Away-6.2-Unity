@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine.UIElements;
 
 public class FishMovement : MonoBehaviour
@@ -170,7 +171,11 @@ public class FishMovement : MonoBehaviour
                     // Después del último salto, se detiene
                     rb.linearVelocity = Vector2.zero;
                     rb.gravityScale = 1f;
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+                    audiomanager.PlaySFX(audiomanager.death);
+                    animator.SetTrigger("dead");
+
+                    StartCoroutine(Reiniciar(2.0f));
                 }
             }
 
@@ -181,6 +186,13 @@ public class FishMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(swimSpeed * input.x * horizontalDamping, rb.linearVelocityY);
             }
         }
+    }
+
+    private IEnumerator Reiniciar(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
     private void SplashPartciles()
     {
