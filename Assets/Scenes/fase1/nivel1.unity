@@ -5189,6 +5189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bucket
       objectReference: {fileID: 0}
+    - target: {fileID: 2913130850824258613, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
+      propertyPath: m_TagString
+      value: derecha
+      objectReference: {fileID: 0}
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: pez
       value: 
@@ -5197,6 +5201,10 @@ PrefabInstance:
       propertyPath: water
       value: 
       objectReference: {fileID: 921373075}
+    - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
+      propertyPath: cuboTipo
+      value: derecha
+      objectReference: {fileID: 0}
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: fishPlace
       value: 
