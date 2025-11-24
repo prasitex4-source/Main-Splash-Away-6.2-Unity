@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/pruebas/prueba.unity
     guid: 8ec33a4a55335064ab11d3d0e00923ff
   - enabled: 0
-    path: Assets/Scenes/pruebas/prueba2.unity
+    path: Assets/Scenes/Level2.unity
     guid: 1c7e0c2f1a85a5c439763977193a584f
   - enabled: 1
     path: Assets/Scenes/fase1/nivel1.unity

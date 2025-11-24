@@ -39,7 +39,8 @@ public class FishMovement : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem splashParticle;
 
-    audiomanager audiomanager;
+    [Header("Audio")]
+    [SerializeField] audiomanager audiomanager;
 
     private Rigidbody2D rb;
     private Vector2 input = Vector2.zero;
@@ -52,7 +53,6 @@ public class FishMovement : MonoBehaviour
 
     private void Awake()
     {
-        audiomanager = GameObject.FindGameObjectWithTag("audio").GetComponent<audiomanager>();
     }
 
     void Start()

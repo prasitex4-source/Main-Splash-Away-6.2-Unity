@@ -13846,6 +13846,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7581740108569521597, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
+      propertyPath: audiomanager
+      value: 
+      objectReference: {fileID: 1949043883}
+    - target: {fileID: 7581740108569521597, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: playerSprite
       value: 
       objectReference: {fileID: 1423903534}
