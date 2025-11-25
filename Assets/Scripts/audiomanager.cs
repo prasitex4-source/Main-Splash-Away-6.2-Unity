@@ -11,6 +11,7 @@ public class audiomanager : MonoBehaviour
     public AudioClip jump;
     public AudioClip splash;
     public AudioClip death;
+    public AudioClip timer;
 
     private void Start()
     {
@@ -22,6 +23,11 @@ public class audiomanager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+
+    public void StopSFX(AudioClip clip)
+    {
+        SFXSource.Stop();
     }
 
 }

@@ -1,35 +1,46 @@
+using System.Collections;
 using UnityEngine;
 
 public class buttoncontroler2 : MonoBehaviour
 {
-    [SerializeField] private GameObject activado1;
-    [SerializeField] private GameObject activado2;
-    [SerializeField] private Sprite buttonOn;
+    [Header("Puertas")]
+    [SerializeField] private GameObject activar;
+    [SerializeField] private GameObject temporizado;
 
-    private bool isOn = true;
+    [Header("Sprites")]
+    [SerializeField] private Sprite buttonOn;
+    [SerializeField] private Sprite buttonOff;
+
+    [Header("Audio")]
+    [SerializeField] audiomanager audiomanager;
+    private bool sound = true;
 
     void Start()
     {
-        activado1.SetActive(true);
-        activado2.SetActive(false);
+        activar.SetActive(true);
+        temporizado.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (!isOn)
-            {
-                activado2.SetActive(true);
-                gameObject.GetComponent<SpriteRenderer>().sprite = buttonOn;
-            }
-
-            else
-            {
-                activado1.SetActive(false);
-                isOn = false;
-            }
+            activar.SetActive(false);
+            temporizado.SetActive(true);
+            gameObject.GetComponent<SpriteRenderer>().sprite = buttonOn;
+            audiomanager.PlaySFX(audiomanager.timer);
+            StartCoroutine(Timer());
         }
 
     }
+
+    private IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(20);
+        audiomanager.StopSFX(audiomanager.timer);
+        temporizado.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().sprite = buttonOff;
+    }
+
+
 }
