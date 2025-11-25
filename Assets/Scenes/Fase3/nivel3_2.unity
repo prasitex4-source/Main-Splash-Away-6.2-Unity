@@ -206,11 +206,7 @@ PrefabInstance:
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: pez
       value: 
-      objectReference: {fileID: 873337330}
-    - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
-      propertyPath: water
-      value: 
-      objectReference: {fileID: 1120272386}
+      objectReference: {fileID: 0}
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: fishPlace
       value: 
@@ -682,11 +678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5198702030047398732, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.27
+      value: 4.03
       objectReference: {fileID: 0}
     - target: {fileID: 5198702030047398732, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.68
+      value: -6.73
       objectReference: {fileID: 0}
     - target: {fileID: 5198702030047398732, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12178,7 +12174,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072281947}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -12260,76 +12256,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2069547544642195032, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
   m_PrefabInstance: {fileID: 232357726}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1120272385
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 799642340385658931, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_Name
-      value: Water (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 14.770432
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.110314
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.3885
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -18.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
---- !u!1 &1120272386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 799642340385658931, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
-  m_PrefabInstance: {fileID: 1120272385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1153599944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12385,11 +12311,7 @@ PrefabInstance:
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: pez
       value: 
-      objectReference: {fileID: 873337330}
-    - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
-      propertyPath: water
-      value: 
-      objectReference: {fileID: 1120272386}
+      objectReference: {fileID: 0}
     - target: {fileID: 6829465581347612005, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
       propertyPath: fishPlace
       value: 
@@ -12399,7 +12321,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2913130850824258613, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
-      insertIndex: 2
+      insertIndex: -1
       addedObject: {fileID: 12240438}
   m_SourcePrefab: {fileID: 100100000, guid: 6a6ec2204cee5814999bacc99063754a, type: 3}
 --- !u!1001 &1318163500
@@ -17935,7 +17857,6 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 059022a7e193d6540a944f1dab7f0b35, type: 3}
   splash: {fileID: 8300000, guid: 38cbcb0aa7c76e243a4c9a98239f3abd, type: 3}
   death: {fileID: 8300000, guid: 4ecaef87ee8825d4e88777a76bf07f92, type: 3}
-  timer: {fileID: 0}
 --- !u!4 &1973471620
 Transform:
   m_ObjectHideFlags: 0
@@ -17964,7 +17885,6 @@ SceneRoots:
   - {fileID: 1153599944}
   - {fileID: 232357726}
   - {fileID: 1562905721}
-  - {fileID: 1120272385}
   - {fileID: 1424444269}
   - {fileID: 1757339369}
   - {fileID: 873337329}

@@ -156,7 +156,7 @@ public class FishMovement : MonoBehaviour
             // Detecta contacto con el suelo
             if (grounded && !wasGroundedLastFrame)
             {
-                if (jumpCount < maxJumps)
+                if (jumpCount < maxJumps && !isSwimming)
                 {
                     audiomanager.PlaySFX(audiomanager.jump);
                     // Resetea la velocidad vertical antes de aplicar salto
