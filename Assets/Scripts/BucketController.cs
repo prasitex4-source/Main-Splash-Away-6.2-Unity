@@ -14,6 +14,7 @@ public class BucketController : MonoBehaviour
     [Header("Tipocubo")]
     [SerializeField] private string cuboTipo;
 
+    [SerializeField] private ultimoboton botoncito;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,6 +39,17 @@ public class BucketController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
             water.SetActive(true);
+        }
+
+        else if (cuboTipo == "final")
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
+
+            if (botoncito.isOn == true)
+            {
+                water.SetActive(true);
+            }
+
         }
 
         else if (cuboTipo == "izquierda")
