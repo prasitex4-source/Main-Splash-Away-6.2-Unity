@@ -119,6 +119,7 @@ public class FishMovement : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce * 1.5f, ForceMode2D.Impulse);
                 bucket.GetComponent<BucketController>().ReactivateCollider();
                 playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                SplashPartciles();
             }
 
             else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -129,6 +130,7 @@ public class FishMovement : MonoBehaviour
                     bucket.GetComponent<BucketController>().PushRight();
                     rb.AddForce(Vector2.right * jumpForce, ForceMode2D.Impulse);
                     playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    SplashPartciles();
                 }
 
                 else { }
@@ -143,6 +145,7 @@ public class FishMovement : MonoBehaviour
                     bucket.GetComponent<BucketController>().PushLeft();
                     rb.AddForce(Vector2.left * jumpForce, ForceMode2D.Impulse);
                     playerSprite.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    SplashPartciles();
                 }
 
                 else { }
@@ -205,23 +208,26 @@ public class FishMovement : MonoBehaviour
         splashParticle.gameObject.SetActive(false);
         splashParticle.gameObject.SetActive(true);
     }
+
     private void OnTriggerStay2D(Collider2D other)
     {
 
         if (other.CompareTag(waterTag))
             isSwimming = true;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(waterTag) || inBucket )
+        if (collision.CompareTag(waterTag) || inBucket)
+        {
+            print("Enter Trigger");
             SplashPartciles();
             audiomanager.PlaySFX(audiomanager.splash);
+        }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.CompareTag(waterTag) || !inBucket )
+        if (collision.CompareTag(waterTag))
         {
             isSwimming = false;
             SplashPartciles();
