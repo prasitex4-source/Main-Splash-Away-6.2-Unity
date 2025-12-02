@@ -150,10 +150,7 @@ public class FishMovement : MonoBehaviour
 
                 else { }
             }
-
         }
-
-
 
         else
         {
@@ -177,14 +174,7 @@ public class FishMovement : MonoBehaviour
                 }
                 else
                 {
-                    // Después del último salto, se detiene
-                    rb.linearVelocity = Vector2.zero;
-                    rb.gravityScale = 1f;
-
-                    audiomanager.PlaySFX(audiomanager.death);
-                    animator.SetTrigger("dead");
-
-                    StartCoroutine(Reiniciar(2.0f));
+                    Death();
                 }
             }
 
@@ -223,6 +213,16 @@ public class FishMovement : MonoBehaviour
             SplashPartciles();
             audiomanager.PlaySFX(audiomanager.splash);
         }
+        else if (collision.CompareTag("muerte"))
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.gravityScale = 1f;
+
+            audiomanager.PlaySFX(audiomanager.death);
+            animator.SetTrigger("dead2");
+
+            StartCoroutine(Reiniciar(2.0f));
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -234,7 +234,6 @@ public class FishMovement : MonoBehaviour
             audiomanager.PlaySFX(audiomanager.splash);
         }
     }
-
     private bool IsGrounded()
     {
         return Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer) != null;
@@ -270,6 +269,18 @@ public class FishMovement : MonoBehaviour
     public void SetFishPosition(GameObject fishPos)
     {
         positionFish = fishPos;
+    }
+
+    public void Death()
+    {
+
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 1f;
+
+        audiomanager.PlaySFX(audiomanager.death);
+        animator.SetTrigger("dead");
+
+        StartCoroutine(Reiniciar(2.0f));
     }
 
     private void OnDrawGizmos()

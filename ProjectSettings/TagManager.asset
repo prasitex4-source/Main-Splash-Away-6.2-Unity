@@ -8,6 +8,7 @@ TagManager:
   - FishPosition
   - derecha
   - audio
+  - muerte
   layers:
   - Default
   - TransparentFX
