@@ -49,7 +49,7 @@ public class FishMovement : MonoBehaviour
     private Vector2 input = Vector2.zero;
     private bool isSwimming = false;
     private bool wasGroundedLastFrame = false;
-    private int jumpCount = 0;
+    public int jumpCount = 0;
     private bool inBucket = false;
 
     private Animator animator;
