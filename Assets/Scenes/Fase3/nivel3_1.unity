@@ -1492,6 +1492,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Recuento
       objectReference: {fileID: 0}
+    - target: {fileID: 8893682893913452474, guid: c52701926d4459d45bf0d5573a2dfb4d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893682893913452474, guid: c52701926d4459d45bf0d5573a2dfb4d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893682893913452474, guid: c52701926d4459d45bf0d5573a2dfb4d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 725327963
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

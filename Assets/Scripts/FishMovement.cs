@@ -19,7 +19,6 @@ public class FishMovement : MonoBehaviour
     [SerializeField] private int maxJumps = 3;               // Número exacto de saltos
     [SerializeField] private float horizontalDamping = 0.98f;// Damping horizontal por frame
     private Rigidbody2D playerRigidbody2d; //Rigidbody of the player to apply forces and movement.
-    [SerializeField] private TMP_Text jumpCounttmp;
 
     [Header("Jump")]
     [SerializeField] private float jumpForce = 5f; //Force used to jump.
@@ -84,7 +83,6 @@ public class FishMovement : MonoBehaviour
 
     void Update()
     {
-        jumpCounttmp.text = (maxJumps - jumpCount).ToString();
         animator.SetBool("isSwimming", isSwimming);
 
         RotatePlayer();
