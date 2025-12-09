@@ -8,36 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/pruebas/prueba.unity
     guid: 8ec33a4a55335064ab11d3d0e00923ff
-  - enabled: 0
-    path: Assets/Scenes/Level2.unity
-    guid: 1c7e0c2f1a85a5c439763977193a584f
   - enabled: 1
-    path: Assets/Scenes/fase1/nivel1.unity
-    guid: 8e377cc87ec941844aef440e3f223a92
+    path: Assets/Scenes/Nivel_1.unity
+    guid: f28d4015acac0b14f835210c7d1b3fc5
   - enabled: 1
-    path: Assets/Scenes/fase1/nivel2.unity
-    guid: 943cefacf9136fc4d95119b3f4339881
-  - enabled: 1
-    path: Assets/Scenes/fase1/nivel3.unity
-    guid: 18bd8f3283aab434fbeb17925c76f50d
-  - enabled: 1
-    path: Assets/Scenes/fase1/Nivel_1.unity
-    guid: f4bf8a95dca4aeb41963d849f96d236d
-  - enabled: 1
-    path: Assets/Scenes/FASE2/nivel2_1.unity
-    guid: 212634ef038377c48890b1c0c09507f7
-  - enabled: 1
-    path: Assets/Scenes/FASE2/nivel2_2.unity
-    guid: 04ba7864a285f934290487916ee8c5b0
+    path: Assets/Scenes/Nivel_2.unity
+    guid: 4772c47cdfcdea5489355cd7a4d0ff4d
   - enabled: 1
     path: Assets/Scenes/Fase3/nivel3_1.unity
     guid: c3fd7b8556241804daaf67097d1e1afb
-  - enabled: 1
-    path: Assets/Scenes/Fase3/nivel3_2.unity
-    guid: 8de7199b6254ee2418e13ff1fc840a0c
-  - enabled: 1
-    path: Assets/Scenes/Fase3/nivel3_3.unity
-    guid: 700b3c61db83feb45b3eff5dde7b2a8f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
