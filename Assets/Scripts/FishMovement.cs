@@ -223,7 +223,7 @@ public class FishMovement : MonoBehaviour
 
             StartCoroutine(Reiniciar(2.0f));
         }
-        else if (collision.tag == "drop")
+        else if (collision.tag == "drops")
         {
             insideDrop = true;
             transform.SetParent(collision.transform);
@@ -240,6 +240,8 @@ public class FishMovement : MonoBehaviour
             audiomanager.PlaySFX(audiomanager.splash);
         }
     }
+
+
     private bool IsGrounded()
     {
         return Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer) != null;
@@ -275,7 +277,7 @@ public class FishMovement : MonoBehaviour
     public void SetFishPosition(GameObject fishPos)
     {
         positionFish = fishPos;
-    }
+    } 
 
     public void Death()
     {
