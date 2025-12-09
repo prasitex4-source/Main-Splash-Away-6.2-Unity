@@ -9,6 +9,7 @@ TagManager:
   - derecha
   - audio
   - muerte
+  - drops
   layers:
   - Default
   - TransparentFX

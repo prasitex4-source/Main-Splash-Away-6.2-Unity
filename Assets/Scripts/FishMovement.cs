@@ -44,6 +44,8 @@ public class FishMovement : MonoBehaviour
     [Header("Audio")]
     [SerializeField] audiomanager audiomanager;
 
+    private bool insideDrop;
+
 
     private Rigidbody2D rb;
     private Vector2 input = Vector2.zero;
@@ -69,12 +71,12 @@ public class FishMovement : MonoBehaviour
     // Entrada del nuevo Input System
     public void Move(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && insideDrop == false)
         {
             input = context.ReadValue<Vector2>();
             input.Normalize();
         }
-        else if (context.canceled)
+        else if (context.canceled && insideDrop == false)
         {
             input = Vector2.zero;
         }
@@ -222,6 +224,12 @@ public class FishMovement : MonoBehaviour
             animator.SetTrigger("dead2");
 
             StartCoroutine(Reiniciar(2.0f));
+        }
+        else if (collision.tag == "drop")
+        {
+            insideDrop = true;
+            transform.SetParent(collision.transform);
+            GetComponent<Rigidbody2D>().linearVelocity = collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
         }
     }
 

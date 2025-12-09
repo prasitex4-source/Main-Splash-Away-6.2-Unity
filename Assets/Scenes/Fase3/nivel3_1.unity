@@ -577,9 +577,10 @@ GameObject:
   m_Component:
   - component: {fileID: 139851780}
   - component: {fileID: 139851781}
+  - component: {fileID: 139851782}
   m_Layer: 0
   m_Name: Gota
-  m_TagString: Untagged
+  m_TagString: drops
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,6 +658,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &139851782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139851779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2126d17843898064d84e902a9bcf2a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &160374487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405794974972372410, guid: b6e9a765c50a9f84e9e431f876a4d32c, type: 3}
@@ -21095,6 +21108,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 383306851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &711139433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711139435}
+  - component: {fileID: 711139434}
+  m_Layer: 0
+  m_Name: spawnerDrops
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &711139434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711139433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671ae4f2f0eb92943a380bc3a3c99e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dropInstance: {fileID: 0}
+  timeToInstance: 5
+--- !u!4 &711139435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711139433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -51.47, y: -45.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712169172
 GameObject:
   m_ObjectHideFlags: 0
@@ -22481,7 +22540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2036996
+      value: 3.265
       objectReference: {fileID: 0}
     - target: {fileID: 2380303275324333413, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22517,7 +22576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7169948137369830548, guid: f63a3468aba9bef42b2f1fad60a6af4f, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 0.48235294
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28090,11 +28149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5198702030047398732, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -61.55
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 5198702030047398732, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.83
+      value: -6.7
       objectReference: {fileID: 0}
     - target: {fileID: 5198702030047398732, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49484,5 +49543,6 @@ SceneRoots:
   - {fileID: 673652794}
   - {fileID: 892252380}
   - {fileID: 1298433552}
+  - {fileID: 711139435}
   - {fileID: 1399969692}
   - {fileID: 326975978}
