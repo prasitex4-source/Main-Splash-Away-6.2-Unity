@@ -201,7 +201,6 @@ public class FishMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-
         if (other.CompareTag(waterTag))
             isSwimming = true;
     }
@@ -225,10 +224,18 @@ public class FishMovement : MonoBehaviour
         }
         else if (collision.tag == "drops")
         {
+            jumpCount = 0;
             insideDrop = true;
             transform.SetParent(collision.transform);
             GetComponent<Rigidbody2D>().linearVelocity = collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity;
+            //StartCoroutine(Reiniciargota());
         }
+    }
+
+    private IEnumerator Reiniciargota()
+    {
+        yield return new WaitForSeconds(2f);
+        transform.SetParent(null);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -241,6 +248,10 @@ public class FishMovement : MonoBehaviour
         }
     }
 
+    public void SetDrops(bool state)
+    {
+        insideDrop = state;
+    }
 
     private bool IsGrounded()
     {
