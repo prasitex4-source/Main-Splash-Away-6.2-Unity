@@ -23250,7 +23250,7 @@ PrefabInstance:
     - target: {fileID: 7581740108569521597, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: splashParticle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2040090653}
     - target: {fileID: 7581740108569521597, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
       propertyPath: groundCheckSize.y
       value: 0.1
@@ -44216,6 +44216,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e9a765c50a9f84e9e431f876a4d32c, type: 3}
+--- !u!198 &2040090653 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8455876899250076997, guid: 11a39584f6ccffc4990e4744d7df007b, type: 3}
+  m_PrefabInstance: {fileID: 1451683094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041806574
 GameObject:
   m_ObjectHideFlags: 0
