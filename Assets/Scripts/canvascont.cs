@@ -6,7 +6,7 @@ public class canvascont : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("nivel_1");
+        SceneManager.LoadScene("Nivel_1");
         //esto luego lo cambiamos x la cinemática
     }
 
