@@ -3,7 +3,7 @@ using System.Collections;
 
 public class charco : MonoBehaviour
 {
-    private float timerMaxTime = 2.5f;
+    [SerializeField] float timerMaxTime = 2.5f;
     private float currentTime;
     private bool isOn;
 

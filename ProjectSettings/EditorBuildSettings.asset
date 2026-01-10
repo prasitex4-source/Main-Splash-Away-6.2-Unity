@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/pruebas/prueba.unity
     guid: 8ec33a4a55335064ab11d3d0e00923ff
   - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 3405d17f10274e04785e0fd36c256ad1
+  - enabled: 1
     path: Assets/Scenes/Nivel_1.unity
     guid: f28d4015acac0b14f835210c7d1b3fc5
   - enabled: 1

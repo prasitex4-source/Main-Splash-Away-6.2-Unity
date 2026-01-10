@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class EstanteriaScript : MonoBehaviour
 {
-    private int jumpCount = 0;
+    private int Count = 0;
     private Rigidbody2D estanteriaRB;
 
     private void Start()
@@ -16,14 +16,14 @@ public class EstanteriaScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            jumpCount ++;
+            Count ++;
         }
     }
 
 
     private void Update()
     {
-        if (jumpCount == 2)
+        if (Count == 2)
         {
             estanteriaRB.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }

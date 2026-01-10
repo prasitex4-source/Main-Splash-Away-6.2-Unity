@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.4918, y: -1.5994, z: 0}
-  m_LocalScale: {x: 0.9763, y: 0.908685, z: 1}
+  m_LocalScale: {x: 0.18595693, y: 0.17307822, z: 0.19047108}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9112407625878952610, guid: 7706c76605976f048a409a440faef90b, type: 3}
+  m_Sprite: {fileID: -3427443288308981933, guid: 7d5a1f0d54d78fb4eb324d53821aec59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +126,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.36677197}
-  m_Size: {x: 1, y: 1.1035492}
+  m_Offset: {x: 0.011139034, y: -1.3353341}
+  m_Size: {x: 6.008227, y: 6.4552975}
   m_Direction: 0
 --- !u!114 &6788000768087065555
 MonoBehaviour:
@@ -141,5 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea04e27a2d2194948af6fb550351f71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  water: {fileID: 0}
-  buttonOn: {fileID: 0}
+  activado: {fileID: 0}
+  desactivado: {fileID: 0}
+  buttonOn: {fileID: 8376169075844460105, guid: ad1045a58da3d5a42944f3aac3dd710f, type: 3}
