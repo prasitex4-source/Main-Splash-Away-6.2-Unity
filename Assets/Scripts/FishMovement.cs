@@ -81,7 +81,6 @@ public class FishMovement : MonoBehaviour
     {
         animator.SetBool("isSwimming", isSwimming);
 
-        RotatePlayer();
 
         if (isSwimming)
         {
@@ -150,7 +149,6 @@ public class FishMovement : MonoBehaviour
                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                     jumpCount++;
-                    RotatePlayer();
                 }
                 else
                 {
@@ -165,6 +163,8 @@ public class FishMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(swimSpeed * input.x * horizontalDamping, rb.linearVelocity.y);
             }
         }
+
+        RotatePlayer(rb.linearVelocity);
     }
 
     private IEnumerator Reiniciar(float delay)
@@ -230,12 +230,23 @@ public class FishMovement : MonoBehaviour
         return Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer) != null;
     }
 
-    private void RotatePlayer()
+    private void RotatePlayer(Vector2 vel)
     {
-        if (rb.linearVelocity.sqrMagnitude <= rotateThresholdVel)
-        {
-            return;
-        }
+        if (vel.magnitude < 0.01f) return;
+
+        bool facingRight = vel.x >= 0;
+        playerSprite.localScale = new Vector3(facingRight ? 1f : -1f, 1f, 1f);
+
+        float tiltAngle = Mathf.Clamp(vel.y * 10f, -45f, 45f);
+
+        if (!facingRight)
+            tiltAngle = -tiltAngle;
+
+        playerSprite.localRotation = Quaternion.Lerp(
+            playerSprite.localRotation,
+            Quaternion.Euler(0f, 0f, tiltAngle),
+            0.1f
+        );
     }
 
     public bool GetBucket()

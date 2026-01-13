@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d020a96b40a2b2c47b5a49e356647bc4
+guid: 92c8bcd2fd45c0943810ff51c33bb31b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8901374488737789482
-    second: pared_0
+      213: 4428800589317444535
+    second: "estanter\xEDa_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,12 +37,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -72,9 +72,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 1
-    textureFormat: 4
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,11 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pared_0
+      name: "estanter\xEDa_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -115,18 +115,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a26b0fd9fe8088b70800000000000000
-      internalID: 8901374488737789482
+      spriteID: 7b39e43dba2467d30800000000000000
+      internalID: 4428800589317444535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pared_1
+      name: "estanter\xEDa_1"
       rect:
         serializedVersion: 2
         x: 256
-        y: 768
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -137,39 +137,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4c5740f89c49547b21738ff3ed127f
-      internalID: 1657540198
+      spriteID: acd9498d8a10056468ce71d9317c2923
+      internalID: 1565188871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pared_2
+      name: "estanter\xEDa_2"
       rect:
         serializedVersion: 2
         x: 512
-        y: 768
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f5ba3e7e97068840baee67ad06eff3a
-      internalID: -1843796247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pared_3
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 512
         width: 256
         height: 256
@@ -181,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d4af47b00f663e4dac815700fe3f708
-      internalID: 290496159
+      spriteID: a92f9d88f3c31b5468433c749254c3e1
+      internalID: 515245930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pared_4
+      name: "estanter\xEDa_3"
       rect:
         serializedVersion: 2
-        x: 256
+        x: 768
         y: 512
-        width: 255
-        height: 255
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,36 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ab585c2f61ebb4fb8ec83381fd7687
-      internalID: 1585300854
+      spriteID: 80dfb2d031d890d40bd83b25eab45583
+      internalID: 771714541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pared_5
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 513
-        width: 253
-        height: 254
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c51815df16762c4d94164fba13e59d4
-      internalID: 105250384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pared_6
+      name: "estanter\xEDa_4"
       rect:
         serializedVersion: 2
         x: 0
@@ -247,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 559ac286705fb494e9a4e51f884ef536
-      internalID: 1629752776
+      spriteID: 837390c029a5c194089f1ecb68533111
+      internalID: 295255004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pared_7
+      name: "estanter\xEDa_5"
       rect:
         serializedVersion: 2
         x: 256
@@ -269,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144406fec79ed974aaa08971976c8363
-      internalID: -1253652462
+      spriteID: f473fefa12e065341995b6bdecdde4c1
+      internalID: -1604723231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pared_8
+      name: "estanter\xEDa_6"
       rect:
         serializedVersion: 2
         x: 512
@@ -291,8 +247,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7b2c0ad11b42404483723a2b4d1ae94
-      internalID: 2038760951
+      spriteID: 636adfcd087bec9409bbd633e22ba121
+      internalID: -2116515568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "estanter\xEDa_7"
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71c5f84a0928aa40896b0f08ff17a03
+      internalID: 948720947
       vertices: []
       indices: 
       edges: []
@@ -301,7 +279,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 78ebff8cbd628a243b68f2e4249626d2
+    spriteID: d96683d68bf0fd2459399b03b3d98c5d
     internalID: 0
     vertices: []
     indices: 
@@ -313,15 +291,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      pared_0: 8901374488737789482
-      pared_1: 1657540198
-      pared_2: -1843796247
-      pared_3: 290496159
-      pared_4: 1585300854
-      pared_5: 105250384
-      pared_6: 1629752776
-      pared_7: -1253652462
-      pared_8: 2038760951
+      "estanter\xEDa_0": 4428800589317444535
+      "estanter\xEDa_1": 1565188871
+      "estanter\xEDa_2": 515245930
+      "estanter\xEDa_3": 771714541
+      "estanter\xEDa_4": 295255004
+      "estanter\xEDa_5": -1604723231
+      "estanter\xEDa_6": -2116515568
+      "estanter\xEDa_7": 948720947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
