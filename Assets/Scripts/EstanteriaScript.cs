@@ -23,7 +23,7 @@ public class EstanteriaScript : MonoBehaviour
 
     private void Update()
     {
-        if (Count == 2)
+        if (Count >= 2)
         {
             estanteriaRB.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
