@@ -72,9 +72,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -104,11 +104,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 20
+        y: 29
         width: 426
-        height: 248
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 239
+      alignment: 9
+      pivot: {x: 0.49872673, y: -0.0015621744}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 637cefa6d89865348987ca55c11a02f5
     internalID: 0
     vertices: []
     indices: 
