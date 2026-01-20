@@ -33,6 +33,7 @@ public class buttoncontroler2 : MonoBehaviour
         }  
         temporizado.SetActive(false);
         gameObject.GetComponent<SpriteRenderer>().sprite = buttonOff;
+        activado.SetActive(true);
         isPressed = false;
         isActiveDoor = false;
         isActiveTimer = false;

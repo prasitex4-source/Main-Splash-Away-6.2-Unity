@@ -13,10 +13,12 @@ public class BucketController : MonoBehaviour
 
     [Header("Tipocubo")]
     [SerializeField] private string cuboTipo;
+    [SerializeField] public bool canFall = false;
 
     [SerializeField] private ultimoboton botoncito;
     [HideInInspector] public bool hasFallen = false;
     [HideInInspector] public bool waterActive = false;
+    [HideInInspector] public Vector3 initialPosition;
 
 
 
@@ -26,6 +28,10 @@ public class BucketController : MonoBehaviour
         {
             water.SetActive(false);
         }
+        if (canFall)
+        {
+            initialPosition = transform.position;
+        }      
     }
 
     public async void ReactivateCollider()
@@ -106,6 +112,11 @@ public class BucketController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         hasFallen = false;
         waterActive = false;
+        if (canFall)
+        {
+            transform.position = initialPosition;
+            GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
+        }
         if (water != null)
         {
             water.SetActive(false);
