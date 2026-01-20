@@ -10,6 +10,7 @@ TagManager:
   - audio
   - muerte
   - drops
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

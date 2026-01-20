@@ -15,15 +15,16 @@ public class BucketController : MonoBehaviour
     [SerializeField] private string cuboTipo;
 
     [SerializeField] private ultimoboton botoncito;
+    [HideInInspector] public bool hasFallen = false;
+    [HideInInspector] public bool waterActive = false;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+
+
+    void Start()
     {
-        if (collision.CompareTag("Player"))
+        if (water != null)
         {
-            pez.gameObject.GetComponent<FishMovement>().SetBucket(true);
-            pez.gameObject.GetComponent<FishMovement>().SetBucket(gameObject);
-            pez.gameObject.GetComponent<FishMovement>().SetFishPosition(fishPlace);
-            GetComponent<Collider2D>().enabled = false;
+            water.SetActive(false);
         }
     }
 
@@ -38,7 +39,12 @@ public class BucketController : MonoBehaviour
         if (cuboTipo == "derecha")
         {
             transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
-            water.SetActive(true);
+            if (water != null)
+            {
+                water.SetActive(true);
+            }
+            waterActive = true;
+            hasFallen = true;
         }
 
         else if (cuboTipo == "final")
@@ -47,7 +53,11 @@ public class BucketController : MonoBehaviour
 
             if (botoncito.isOn == true)
             {
-                water.SetActive(true);
+                if (water != null)
+                {
+                    water.SetActive(true);
+                }
+                waterActive = true;
             }
 
         }
@@ -55,11 +65,8 @@ public class BucketController : MonoBehaviour
         else if (cuboTipo == "izquierda")
         {
             transform.rotation = Quaternion.Euler(0f, 0f, -90.0f);
+            hasFallen = true;
         }
-
-        else
-        { }
-       
     }
 
     public void PushLeft()
@@ -68,21 +75,41 @@ public class BucketController : MonoBehaviour
         if (cuboTipo == "izquierda")
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 90.0f);
-            water.SetActive(true);
+            if (water != null)
+            {
+                water.SetActive(true);
+            }
+            waterActive = true;
+            hasFallen = true;
         }
 
         else if (cuboTipo == "derecha")
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 90.0f);
+            hasFallen = true;
         }
-
-        else
-        { }
     }
-
-
-    void Start()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        water.SetActive(false);
+        if (collision.CompareTag("Player"))
+        {
+            pez.gameObject.GetComponent<FishMovement>().SetBucket(true);
+            pez.gameObject.GetComponent<FishMovement>().SetBucket(gameObject);
+            pez.gameObject.GetComponent<FishMovement>().SetFishPosition(fishPlace);
+            GetComponent<Collider2D>().enabled = false;
+        }
     }
+
+    public void RestartBucket()
+    {
+        GetComponent<Collider2D>().enabled = true;
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        hasFallen = false;
+        waterActive = false;
+        if (water != null)
+        {
+            water.SetActive(false);
+        }
+    }
+
 }

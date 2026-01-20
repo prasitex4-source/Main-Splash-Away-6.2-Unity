@@ -170,7 +170,10 @@ public class FishMovement : MonoBehaviour
     private IEnumerator Reiniciar(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        jumpCount = 0;
+        animator.SetBool("dead2", false);
+        animator.SetBool("dead", false);
+        CheckPointManager.instance.Respawn(gameObject);
     }
 
     private void SplashPartciles()
@@ -187,7 +190,11 @@ public class FishMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(waterTag) || inBucket)
+        if(collision.CompareTag("CheckPoint"))
+        {
+            CheckPointManager.instance.currentCheckpointPosition = collision.gameObject;
+        }
+        else if (collision.CompareTag(waterTag) || inBucket)
         {
             SplashPartciles();
             audiomanager.PlaySFX(audiomanager.splash);
@@ -197,7 +204,7 @@ public class FishMovement : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             rb.gravityScale = 1f;
             audiomanager.PlaySFX(audiomanager.death);
-            animator.SetTrigger("dead2");
+            animator.SetBool("dead2", true);
             StartCoroutine(Reiniciar(2.0f));
         }
         else if (collision.tag == "drops")
@@ -274,7 +281,7 @@ public class FishMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 1f;
         audiomanager.PlaySFX(audiomanager.death);
-        animator.SetTrigger("dead");
+        animator.SetBool("dead", true);
         StartCoroutine(Reiniciar(2.0f));
     }
 
