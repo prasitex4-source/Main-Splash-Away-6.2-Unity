@@ -44,14 +44,35 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: 1cielo
+    uniqueID: 3774675639
+    locked: 0
+  - name: 2nubes
+    uniqueID: 1522111555
+    locked: 0
+  - name: 3sol
+    uniqueID: 3912263647
+    locked: 0
+  - name: 4gaviotas
+    uniqueID: 2997600055
+    locked: 0
+  - name: 6agua
+    uniqueID: 2478562071
+    locked: 0
+  - name: 7barras
+    uniqueID: 1752467587
     locked: 0
   - name: Water
     uniqueID: 3560039413
     locked: 0
-  - name: Elements
-    uniqueID: 725327963
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 5nube
+    uniqueID: 2442720701
+    locked: 0
+  - name: 8gaviotafront
+    uniqueID: 3204493557
     locked: 0
   m_RenderingLayers:
   - Default
