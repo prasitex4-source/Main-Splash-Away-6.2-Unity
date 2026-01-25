@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class curtainTriggerScript : MonoBehaviour
 {
 
     [SerializeField] GameObject curtains;
     [SerializeField] Animator animator;
+    private bool charOut = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,5 +18,13 @@ public class curtainTriggerScript : MonoBehaviour
     void Update()
     {
         animator.SetBool("charOut", charOut);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Triggered");
+            charOut = true;
+        }
     }
 }
